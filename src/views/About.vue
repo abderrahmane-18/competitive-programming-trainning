@@ -32,39 +32,59 @@
       class="text-2xl font-semibold mb-4 text-primary-600 animate-fadeIn"
       style="animation-delay: 0.8s"
     >
-      Success Stories
+      Our Instructor
     </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <StudentShowcase
-        v-for="student in successStories"
-        :key="student.id"
-        :name="student.name"
-        :achievement="student.achievement"
-        :testimonial="student.testimonial"
-        :style="{ animationDelay: `${1 + student.id * 0.2}s` }"
-      />
+    <div class="animate-fadeIn" style="animation-delay: 1s">
+      <h3 class="text-xl font-semibold text-primary-600">Mohammed Kilani</h3>
+      <p class="text-accent-500 mb-2">
+        International Grandmaster in codeforces
+      </p>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import StudentShowcase from "../components/StudentShowcase.vue";
+import MentorProfile from "../components/MentorProfile.vue";
 
-const successStories = ref([
+const mentors = ref([
   {
     id: 1,
-    name: "Alice Johnson",
-    achievement: "Secured a job at Google",
-    testimonial:
-      "Competitive programming gave me the skills and confidence to ace my technical interviews.",
+    name: "Dr. Alice Johnson",
+    title: "Lead Instructor",
+    bio: "Dr. Johnson has over 10 years of experience in competitive programming and has coached multiple teams to international victories.",
+    avatar: "/images/alice-johnson.jpg",
+    socialLinks: [
+      {
+        platform: "linkedin",
+        url: "https://linkedin.com/in/alicejohnson",
+        icon: "fab fa-linkedin",
+      },
+      {
+        platform: "github",
+        url: "https://github.com/alicejohnson",
+        icon: "fab fa-github",
+      },
+    ],
   },
   {
     id: 2,
     name: "Bob Smith",
-    achievement: "Won the International Collegiate Programming Contest",
-    testimonial:
-      "The training I received here was instrumental in my success at international competitions.",
+    title: "Algorithm Specialist",
+    bio: "Bob is a former ACM ICPC world finalist and specializes in graph algorithms and dynamic programming.",
+    avatar: "/images/bob-smith.jpg",
+    socialLinks: [
+      {
+        platform: "linkedin",
+        url: "https://linkedin.com/in/bobsmith",
+        icon: "fab fa-linkedin",
+      },
+      {
+        platform: "github",
+        url: "https://github.com/bobsmith",
+        icon: "fab fa-github",
+      },
+    ],
   },
 ]);
 </script>

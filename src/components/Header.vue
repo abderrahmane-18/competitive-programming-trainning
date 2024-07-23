@@ -1,5 +1,8 @@
 <template>
-  <header class="bg-white shadow-md">
+  <header
+    class="bg-white shadow-md sticky top-0 z-50 transition-all duration-300"
+    :class="{ 'shadow-lg': scrolled }"
+  >
     <nav class="container mx-auto px-4 py-4">
       <div class="flex justify-between items-center">
         <router-link
@@ -45,6 +48,7 @@
           <router-link
             :to="item.path"
             class="block text-neutral-600 hover:text-primary-600 transition-colors duration-200"
+            @click="closeMobileMenu"
           >
             {{ item.name }}
           </router-link>
@@ -55,12 +59,30 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 
 const mobileMenuOpen = ref(false);
+const scrolled = ref(false);
+
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value;
 };
+
+const closeMobileMenu = () => {
+  mobileMenuOpen.value = false;
+};
+
+const handleScroll = () => {
+  scrolled.value = window.scrollY > 0;
+};
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 
 const navItems = [
   { name: "About", path: "/about" },

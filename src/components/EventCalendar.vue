@@ -23,9 +23,21 @@
 import { ref } from "vue";
 
 const events = ref([
-  { id: 1, date: "2024-07-25", title: "Introduction to Algorithms Workshop" },
-  { id: 2, date: "2024-08-01", title: "Mock Competition" },
-  { id: 3, date: "2024-08-15", title: "Advanced Data Structures Seminar" },
+  {
+    id: 1,
+    date: "2024-07-27",
+    title: "Introduction to Competitive Programming",
+  },
+  {
+    id: 2,
+    date: "2024-08-03",
+    title: "Advanced Graph Algorithms (Coming Soon)",
+  },
+  {
+    id: 3,
+    date: "2024-08-10",
+    title: "Dynamic Programming Techniques (Coming Soon)",
+  },
 ]);
 
 const formatDate = (dateString) => {

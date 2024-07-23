@@ -1,42 +1,14 @@
 <template>
-  <div>
-    <h1 class="text-4xl font-bold mb-6 text-primary-600 animate-fadeIn">
-      Blog
-    </h1>
-    <BlogPost
-      v-for="(post, index) in blogPosts"
-      :key="post.id"
-      :title="post.title"
-      :date="post.date"
-      :content="post.content"
-      :slug="post.slug"
-      :style="{ animationDelay: `${index * 0.2}s` }"
-    />
+  <div class="flex flex-col items-center justify-center min-h-screen">
+    <h1 class="text-6xl font-bold text-primary-600 mb-4 animate-pulse">Blog</h1>
+    <p class="text-4xl font-semibold text-accent-500 animate-fadeIn">
+      Coming Soon!
+    </p>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-import BlogPost from "../components/BlogPost.vue";
-
-const blogPosts = ref([
-  {
-    id: 1,
-    title: "Getting Started with Competitive Programming",
-    date: "2024-07-15",
-    content:
-      "<p>In this post, we'll cover the basics of getting started with competitive programming...</p>",
-    slug: "getting-started-with-competitive-programming",
-  },
-  {
-    id: 2,
-    title: "Advanced Dynamic Programming Techniques",
-    date: "2024-07-10",
-    content:
-      "<p>Learn about advanced dynamic programming techniques used in competitive programming...</p>",
-    slug: "advanced-dynamic-programming-techniques",
-  },
-]);
+// No script needed for this version
 </script>
 
 <style scoped>
@@ -51,7 +23,21 @@ const blogPosts = ref([
   }
 }
 
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
 .animate-fadeIn {
-  animation: fadeIn 0.5s ease-out forwards;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 </style>

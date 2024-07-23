@@ -11,14 +11,15 @@
       </router-view>
     </main>
     <Footer />
+    <CodeforcesModerator />
   </div>
 </template>
 
 <script setup>
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
+import CodeforcesModerator from "./components/CodeforcesModerator.vue";
 </script>
-
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap");
 

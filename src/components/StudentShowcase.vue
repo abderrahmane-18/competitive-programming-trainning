@@ -5,6 +5,17 @@
     <h3 class="text-xl font-semibold mb-4 text-primary-600">{{ name }}</h3>
     <p class="text-accent-500 mb-2 font-medium">{{ achievement }}</p>
     <p class="text-neutral-700 italic">"{{ testimonial }}"</p>
+    <div class="mt-4 flex justify-between items-center">
+      <span class="text-sm text-neutral-500">{{ institution }}</span>
+      <a
+        :href="profileLink"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-primary-600 hover:text-primary-700 transition-colors duration-200"
+      >
+        View Profile
+      </a>
+    </div>
   </div>
 </template>
 
@@ -13,6 +24,8 @@ defineProps({
   name: String,
   achievement: String,
   testimonial: String,
+  institution: String,
+  profileLink: String,
 });
 </script>
 

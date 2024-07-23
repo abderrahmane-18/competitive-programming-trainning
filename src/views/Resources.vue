@@ -9,7 +9,16 @@
           Online Judges
         </h2>
         <ul class="list-disc list-inside text-neutral-700">
-          <li v-for="judge in onlineJudges" :key="judge">{{ judge }}</li>
+          <li v-for="judge in onlineJudges" :key="judge.name">
+            <a
+              :href="judge.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-primary-600 transition-colors duration-200"
+            >
+              {{ judge.name }}
+            </a>
+          </li>
         </ul>
       </div>
       <div class="animate-fadeIn" style="animation-delay: 0.4s">
@@ -17,31 +26,42 @@
           Learning Materials
         </h2>
         <ul class="list-disc list-inside text-neutral-700">
-          <li v-for="material in learningMaterials" :key="material">
-            {{ material }}
+          <li v-for="material in learningMaterials" :key="material.title">
+            <a
+              :href="material.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-primary-600 transition-colors duration-200"
+            >
+              {{ material.title }}
+            </a>
+            <span class="text-neutral-500"> by {{ material.author }}</span>
           </li>
         </ul>
       </div>
     </div>
   </div>
 </template>
-
 <script setup>
 import { ref } from "vue";
 
 const onlineJudges = ref([
-  "Codeforces",
-  "AtCoder",
-  "LeetCode",
-  "HackerRank",
-  "SPOJ",
+  { name: "Codeforces", url: "https://codeforces.com/" },
+  { name: "Cses", url: "https://cses.fi/problemset/" },
+  { name: "LeetCode", url: "https://leetcode.com/" },
 ]);
 
 const learningMaterials = ref([
-  "Introduction to Algorithms by CLRS",
-  "Competitive Programming 3 by Steven Halim",
-  "Algorithms course on Coursera",
-  "Competitive Programmer's Handbook by Antti Laaksonen",
+  {
+    title: "Competitive Programmer's Handbook",
+    author: "Antti Laaksonen",
+    url: "https://cses.fi/book/index.php",
+  },
+  {
+    title: "Algorithms for Competitive Programming",
+    author: "E-Maxx",
+    url: "https://cp-algorithms.com/",
+  },
 ]);
 </script>
 
