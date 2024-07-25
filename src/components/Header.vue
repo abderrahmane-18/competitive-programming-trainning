@@ -9,7 +9,7 @@
           to="/"
           class="text-2xl font-bold text-primary-600 hover:text-primary-700 transition-colors duration-200"
         >
-          CP Training
+          CP Training -Jijel
         </router-link>
         <ul class="hidden md:flex space-x-6">
           <li v-for="item in navItems" :key="item.path">
