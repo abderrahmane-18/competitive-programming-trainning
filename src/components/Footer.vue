@@ -85,7 +85,7 @@ const quickLinks = [
 const socialLinks = [
   {
     name: "Facebook",
-    url: "https://www.facebook.com/profile.php?id=100064585130293",
+    url: "https://www.facebook.com/abderrahmane.tech/",
   },
 
   { name: "Telegram", url: "https://t.me/+yBBHC-6Jnw0xZDZk" },

@@ -20,12 +20,15 @@
         <form
           @submit.prevent="submitForm"
           class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+          action="https://formspree.io/f/your-form-id"
+          method="POST"
         >
           <div class="mb-4">
             <label for="name" class="block mb-2 text-neutral-700">Name:</label>
             <input
               type="text"
               id="name"
+              name="name"
               v-model="form.name"
               required
               class="w-full p-2 border rounded focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
@@ -38,6 +41,7 @@
             <input
               type="email"
               id="email"
+              name="email"
               v-model="form.email"
               required
               class="w-full p-2 border rounded focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
@@ -74,12 +78,22 @@ const form = ref({
   email: "",
 });
 
-const submitForm = () => {
-  // Here you would typically send the form data to a server
-  console.log("Form submitted:", form.value);
-  // Send notification to dev.problemsolving18@gmail.com
-  alert("Thank you for your interest! We will contact you soon.");
-  form.value = { name: "", email: "" };
+const submitForm = async () => {
+  const response = await fetch("https://formspree.io/f/xpwaqeje", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(form.value),
+  });
+
+  if (response.ok) {
+    alert("Thank you for your interest! We will contact you soon.");
+    form.value = { name: "", email: "" };
+  } else {
+    alert("There was an error sending your message. Please try again later.");
+  }
 };
 </script>
 

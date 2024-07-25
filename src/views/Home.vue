@@ -21,29 +21,41 @@
         style="animation-delay: 0.2s"
       >
         <h2 class="text-2xl font-semibold mb-4 text-primary-600">
-          Upcoming Events
+          Next Training Sessions
         </h2>
-        <EventCalendar />
+        <ul>
+          <li class="mb-4">
+            <h3 class="text-lg font-semibold mb-1 text-neutral-800">
+              July 27, 2024: Advanced Graph Algorithms
+            </h3>
+            <p class="text-neutral-600">(Coming Soon)</p>
+          </li>
+          <li class="mb-4">
+            <h3 class="text-lg font-semibold mb-1 text-neutral-800">
+              Aug 10: Dynamic Programming Techniques
+            </h3>
+            <p class="text-neutral-600">(Coming Soon)</p>
+          </li>
+        </ul>
       </div>
       <div
         class="bg-white rounded-lg shadow-xl p-6 border border-neutral-200 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 animate-fadeIn"
         style="animation-delay: 0.4s"
       >
         <h2 class="text-2xl font-semibold mb-4 text-primary-600">
-          Latest News
+          About Trainer
         </h2>
-        <ul>
-          <li
-            v-for="news in latestNews"
-            :key="news.id"
-            class="mb-4 pb-4 border-b border-neutral-200 last:border-b-0"
-          >
-            <h3
-              class="text-lg font-semibold mb-1 text-neutral-800 hover:text-primary-600 transition-colors duration-200"
-            >
-              {{ news.title }}
-            </h3>
-            <p class="text-neutral-600">{{ news.excerpt }}</p>
+        <ul class="list-disc list-inside text-neutral-700">
+          <li>
+            Jordanian competitive programmer with extensive experience in the
+            field
+          </li>
+          <li>Won the regional competition with his team twice</li>
+          <li>Participated in the global finals</li>
+          <li>Ranked Grandmaster in Codeforces</li>
+          <li>
+            Participated in the Informatics Olympiad with a bronze medal (ranked
+            102-103) from 335 participants from various countries of the world
           </li>
         </ul>
       </div>
@@ -53,7 +65,6 @@
 
 <script setup>
 import { ref } from "vue";
-import EventCalendar from "../components/EventCalendar.vue";
 
 const latestNews = ref([
   {

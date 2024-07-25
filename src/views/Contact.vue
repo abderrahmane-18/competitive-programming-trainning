@@ -65,12 +65,22 @@ const form = ref({
   message: "",
 });
 
-const submitForm = () => {
-  // Here you would typically send the form data to a server
-  console.log("Form submitted:", form.value);
-  // Send notification to dev.problemsolving18@gmail.com
-  alert("Thank you for your message! We will get back to you soon.");
-  form.value = { name: "", email: "", message: "" };
+const submitForm = async () => {
+  const response = await fetch("https://formspree.io/f/xpwaqeje", {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(form.value),
+  });
+
+  if (response.ok) {
+    alert("Thank you for your message! We will get back to you soon.");
+    form.value = { name: "", email: "", message: "" };
+  } else {
+    alert("There was an error sending your message. Please try again later.");
+  }
 };
 </script>
 
