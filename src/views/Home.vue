@@ -26,15 +26,8 @@
         <ul>
           <li class="mb-4">
             <h3 class="text-lg font-semibold mb-1 text-neutral-800">
-              July 27, 2024: Advanced Graph Algorithms
+              July 27, 2024: Introduction Competitive Programming
             </h3>
-            <p class="text-neutral-600">(Coming Soon)</p>
-          </li>
-          <li class="mb-4">
-            <h3 class="text-lg font-semibold mb-1 text-neutral-800">
-              Aug 10: Dynamic Programming Techniques
-            </h3>
-            <p class="text-neutral-600">(Coming Soon)</p>
           </li>
         </ul>
       </div>
@@ -45,15 +38,21 @@
         <h2 class="text-2xl font-semibold mb-4 text-primary-600">
           About Trainer
         </h2>
+        <p class="mb-4 text-neutral-700">
+          Hello! Meet our course presenter, a Jordanian competitive programmer
+          with extensive experience in the field.
+        </p>
         <ul class="list-disc list-inside text-neutral-700">
-          <li>
-            Jordanian competitive programmer with extensive experience in the
-            field
+          <li class="text-lg font-semibold text-secondary-600">
+            Won the regional competition with his team twice
           </li>
-          <li>Won the regional competition with his team twice</li>
-          <li>Participated in the global finals</li>
-          <li>Ranked Grandmaster in Codeforces</li>
-          <li>
+          <li class="text-lg font-semibold text-secondary-600">
+            Participated in the global finals
+          </li>
+          <li class="text-lg font-semibold text-secondary-600">
+            Ranked International Grandmaster in Codeforces
+          </li>
+          <li class="text-lg font-semibold text-secondary-600">
             Participated in the Informatics Olympiad with a bronze medal (ranked
             102-103) from 335 participants from various countries of the world
           </li>
@@ -62,7 +61,6 @@
     </div>
   </div>
 </template>
-
 <script setup>
 import { ref } from "vue";
 
