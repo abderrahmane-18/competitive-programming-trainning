@@ -46,9 +46,9 @@
 import { ref } from "vue";
 
 const onlineJudges = ref([
-  { name: "Codeforces", url: "https://codeforces.com/" },
+  { name: "Codeforces", url: "https://codeforces.com/problemset" },
   { name: "Cses", url: "https://cses.fi/problemset/" },
-  { name: "LeetCode", url: "https://leetcode.com/" },
+  { name: "LeetCode", url: "https://leetcode.com/accounts/login/" },
 ]);
 
 const learningMaterials = ref([

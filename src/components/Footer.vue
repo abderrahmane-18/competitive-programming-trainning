@@ -81,9 +81,9 @@ const socialLinks = [
 ];
 
 const resources = ref([
-  { name: "Codeforces", url: "https://codeforces.com/" },
+  { name: "Codeforces", url: "https://codeforces.com/problemset" },
   { name: "CSES", url: "https://cses.fi/problemset/" },
-  { name: "LeetCode", url: "https://leetcode.com/" },
+  { name: "LeetCode", url: "https://leetcode.com/accounts/login/" },
   { name: "Book cses", url: "https://cses.fi/book/book.pdf" },
 ]);
 </script>
