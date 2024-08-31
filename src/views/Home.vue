@@ -26,7 +26,8 @@
         <ul>
           <li class="mb-4">
             <h3 class="text-lg font-semibold mb-1 text-neutral-800">
-              July 27, 2024: Introduction Competitive Programming
+              31 August , 2024: Introduction Competitive Programming ,Greedy
+              Algorithms
             </h3>
           </li>
         </ul>
